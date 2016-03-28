@@ -57,5 +57,5 @@ After running it you should get a file called `code_new.js` with the final resul
 {% include code/code_new.js %}
 {% endhighlight %}
 
-The code is now mostly readable and you can find the payload url. By the time I read the email the file was already taken down, but with some search engine magic I could find it on [http://dasmalwerk.eu/](dasmalwerk.eu/). Unfortunately it didn't work in my virtual machine.
+The code is now mostly readable and you can find the payload url. By the time I read the email the file was already taken down, but with some search engine magic I could find it on [dasmalwerk.eu](http://dasmalwerk.eu/). Unfortunately it didn't work in my virtual machine.
 

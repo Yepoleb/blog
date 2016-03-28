@@ -162,7 +162,7 @@ blockquote {
 
 code,
 pre {
-  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-family: Inconsolata, monospace, sans-serif;
 }
 
 code {
@@ -175,6 +175,7 @@ code {
 
 pre {
   display: block;
+  max-height: 30rem;
   margin-top: 0;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -184,6 +185,7 @@ pre {
   white-space: pre-wrap;
   word-break: break-all;
   // word-wrap: break-word;
+  overflow: auto;
   background-color: #f9f9f9;
 }
 
@@ -195,6 +197,7 @@ pre code {
 }
 
 .highlight {
+  margin: 0;
   margin-bottom: 1rem;
   border-radius: 4px;
 }
