@@ -7,11 +7,11 @@ name:               "Yepoleb"
 description:        "Blogging about programming, electronics and Linux"
 
 # jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
-url:                "//yepoleb.github.io"
+url:                "//yepoleb.github.io/blog"
 author:             "Yepoleb"
 
 # URL
-baseurl:            ""
+baseurl:            "/blog"
 permalink:          /:year/:month/:day/:title/
 
 # Markdown
