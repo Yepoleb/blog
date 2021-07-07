@@ -17,7 +17,7 @@ I decided to use the separate user approach because it seemed like a good compro
 
 ### Installing packages
 
-The required packages for this installation are `wordpress php-fpm mariadb-server`. I installed them using apt:
+The required packages for this installation are `wordpress php-fpm mariadb-server`, which I installed using apt. Apache is assumed to be already installed.
 
     sudo apt install wordpress php-fpm mariadb-server
 
@@ -27,7 +27,7 @@ Username for the new user is `wordpress`. I decided to create it as a regular us
 
     sudo adduser wordpress
 
-This user also has to be created in MariaDB along with a database of the same name. Socket authentication has many benefits over password authentication because there is no password to be forgotten or stolen.
+This user also has to be created in MariaDB along with a database of the same name. Socket authentication has many benefits over password authentication because there is no password to be forgotten or stolen. A MariaDB shell can be opened by running the `mariadb` command as root.
 
     CREATE DATABASE wordpress CHARACTER SET 'utf8mb4';
     GRANT ALL ON `wordpress`.* TO 'wordpress'@'localhost' IDENTIFIED VIA unix_socket;
@@ -47,7 +47,7 @@ The new config needs the username, group and socket set. The example below is no
     group = wordpress
     listen = /run/php/wordpress.sock
 
-At last FPM needs to be restarted
+At last FPM needs to be restarted.
 
     sudo systemctl restart php7.3-fpm
 
@@ -94,9 +94,9 @@ This is the main part of the config. `SSLEngine On` is a shorthand for a full SS
 
 This part is just a more complicated HTTP to HTTPS redirect with an exception for certbot webroot challenges. There are a few modules that also need to be enabled:
 
-    sudo a2enmod rewrite setenvif fcgi
+    sudo a2enmod rewrite setenvif proxy_fcgi ssl
 
-Enable the site and restart Apache
+Enable the site and restart Apache.
 
     sudo a2ensite wordpress
     sudo systemctl restart apache2
