@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How I set up Nextcloud on Debian 10
-date: 2021-07-02 00:12:00 +0200
+date: 2021-07-02 18:25:00 +0200
 ---
 
 This is a sequel to my post about setting up Wordpress on Debian. It has a quick introduction about why I set up things the way I do, which I will not repeat here. Instead I'll go straight to the installation steps.
