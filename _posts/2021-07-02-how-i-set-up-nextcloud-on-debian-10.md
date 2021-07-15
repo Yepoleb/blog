@@ -119,6 +119,19 @@ Nextcloud complains in the settings if the following options are not set in `/et
     post_max_size = 1G
     memory_limit = 512M
 
+### Background jobs
+
+I almost never use the webinterface, so background tasks don't get run for a long time. That's why I decided to set up a systemd timer to periodically run the `cron.php` file. The [official documentation](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/background_jobs_configuration.html#systemd) actually covers this quite well, there are just a few changes to the service file necessary.
+
+    [Unit]
+    Description=Nextcloud cron.php job
+    
+    [Service]
+    User=nextcloud
+    ExecStart=/usr/bin/php -f /usr/local/share/nextcloud/cron.php
+    Environment="NEXTCLOUD_CONFIG_DIR=/var/lib/nextcloud/config"
+    KillMode=process
+
 ### Software versions
 
 * Debian 10 Buster
