@@ -89,6 +89,6 @@ This allowed me to dump the values that were fed to the signature algorithm and 
 
 ## Final Notes
 
-All my findings are documented in this repository: https://github.com/Yepoleb/idcard-qr
+All my findings are documented in this repository: [https://github.com/Yepoleb/idcard-qr](https://github.com/Yepoleb/idcard-qr)
 
 If this post was useful to you and you're doing something similar, feel free to contact me for help if you're stuck.
