@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Reverse Engineering the CHECK-AT Android App
+title: Reverse Engineering the Austrian ID-Card Verification App
 date: 2021-08-19 00:48:31 +0200
 ---
 
-This article describes how I modified the CHECK-AT app to reverse engineer the web API and encryption.
+This article describes how I modified the CHECK-AT app to reverse engineer the web API and encryption. It's an app released by the Austrian ministry of interior to check the validity of government issued ID-cards. It works by reading a QR code on the back which contains the data on the card in a digitally signed format. New certificates are added using a web API. I wanted to document the process to make an open-source implementation possible.
 
 ## Decompiling the App
 
