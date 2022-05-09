@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Transparent proxying setup for mitmproxy with only one VM
-date: 2022-05-08 00:03:56 +0200
+date: 2022-05-08 03:56:00 +0200
 ---
 
 The [official guide](https://docs.mitmproxy.org/stable/howto-transparent-vms/) on proxying VMs with mitmproxy is quite simple and works reliably, but it has one big flaw: if you're already a Linux host that can do transparent proxying, the second VM adds nothing of value and the process of moving data in and out of the VM is annoying. In this guide we'll instead use the host to do do all those tasks for us.
