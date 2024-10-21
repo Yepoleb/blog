@@ -1,0 +1,68 @@
+esphome:
+  name: alutherm-{{ name }}
+
+esp8266:
+  board: esp_wroom_02
+
+logger:
+
+uart:
+  rx_pin: GPIO13
+  tx_pin: GPIO15
+  baud_rate: 9600
+
+time:
+  - platform: homeassistant
+    id: ha_time
+
+tuya:
+  time_id: ha_time
+
+climate:
+  - platform: tuya
+    name: "Thermostat"
+    supports_heat: true
+    supports_cool: false
+    switch_datapoint: 1
+    target_temperature_datapoint: 2
+    current_temperature_datapoint: 3
+    preset:
+      eco:
+        datapoint: 102
+
+select:
+  - platform: tuya
+    name: "Mode"
+    enum_datapoint: 4
+    options:
+      0: "Manual"
+      1: "Automatic"
+
+  - platform: tuya
+    name: "Power"
+    enum_datapoint: 101
+    options:
+      0: "Low"
+      1: "Medium"
+      2: "High"
+      3: "Off"
+
+# Enable Home Assistant API
+api:
+  password: ""
+
+ota:
+  - platform: esphome
+    password: ""
+
+wifi:
+  ssid: "{{ wifi_name }}"
+  password: "{{ wifi_password }}"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Alutherm {{ name }} Hotspot"
+    password: "w4zeajVofgUF"
+
+captive_portal:
+
